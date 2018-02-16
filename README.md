@@ -2,6 +2,14 @@
 
 XunkCalendar is a simple calendar component with material design designed for Angular 5+ and Angular Material (might work with earlier versions too!)
 
+# Installation
+
+The package is hosted on npm, so you can install it just by
+
+```Bash
+npm install xunk-ferrous
+```
+
 # Usage
 
 First, import `XunkCalendarModule` into `app.module`. You may then use the component as
