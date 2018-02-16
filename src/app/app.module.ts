@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { XunkCalendarModule } from './modules/xunk-calendar/xunk-calendar.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    XunkCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

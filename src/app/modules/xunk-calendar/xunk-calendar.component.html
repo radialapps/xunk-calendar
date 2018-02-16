@@ -1,0 +1,35 @@
+<table class="xunk-calendar mat-elevation-z6">
+  <tr>
+      <th> 
+          <button mat-icon-button (click)="changeMonth(-1)" >
+              <mat-icon>keyboard_arrow_left</mat-icon>
+          </button> 
+      </th>
+
+      <th colspan=5>{{monthNames[openPage.month].toUpperCase()}}</th>
+
+      <th> 
+          <button mat-icon-button (click)="changeMonth(1)">
+              <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+      </th>
+  </tr>
+  
+  <tr *ngFor="let row of calendar">
+      <td class="xunk-calendar-cell" *ngFor="let col of row">
+          <ng-container *ngIf="col != ''">
+
+              <ng-container *ngIf="isFab(col); else notFab">
+                  <button mat-mini-fab [color]="isFab(col)" (click)="selectDay(col)">
+                      {{col}}
+                  </button>
+              </ng-container>
+
+              <ng-template #notFab>
+                  <button mat-icon-button (click)="selectDay(col)">{{col}}</button>
+              </ng-template>
+
+          </ng-container>
+      </td>
+  </tr>
+</table>

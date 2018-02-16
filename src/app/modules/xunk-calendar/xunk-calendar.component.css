@@ -1,0 +1,11 @@
+.xunk-calendar {
+    width:100%; 
+    max-width: 400px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 0 auto;
+}
+
+.xunk-calendar-cell {
+    text-align:right;
+}
