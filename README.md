@@ -21,9 +21,9 @@ First, import `XunkCalendarModule` into `app.module`. You may then use the compo
 `selectedDate` binds to a JSON object of the following format (say for 2018-02-16):
 ```javascript
 {
-	date: 16,
-	month: 1,
-	year: 18
+  date: 16,
+  month: 1,
+  year: 18
 }
 ```
 
@@ -40,9 +40,9 @@ Currently, the selectedDate object has to be initialized properly, and a minimal
 ```typescript
 public selDate = { date:1, month:1, year:1 };
 
-  ngOnInit() {
-      this.selDate = XunkCalendarModule.getToday();
-  }
+ngOnInit() {
+  this.selDate = XunkCalendarModule.getToday();
+}
 ```
 
 # Contributing
