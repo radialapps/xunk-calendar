@@ -34,5 +34,15 @@ Note that month starts with 0, but date starts with 1. To quickly make the initi
 # Dependencies
 The component makes use of `mat-icon` and `mat-button` from `@angular/material`. You may need other dependencies in `package.json` to build the module.
 
+# Known Issues
+Currently, the selectedDate object has to be initialized properly, and a minimal initialization looks like
+```typescript
+public selDate = { date:1, month:1, year:1 };
+
+  ngOnInit() {
+      this.selDate = XunkCalendarModule.getToday();
+  }
+```
+
 # Contributing
 Contributing is free! You are welcome to criticize, help write code, file bugs or give me a lesson on how to properly comment code, as long as no one gets sued!

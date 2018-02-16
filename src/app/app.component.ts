@@ -9,7 +9,7 @@ import { XunkCalendarModule } from './modules/xunk-calendar/xunk-calendar.module
 })
 export class AppComponent {
 
-  public selDate = {};
+  public selDate = { date:1, month:1, year:1 };
 
   ngOnInit() {
       this.selDate = XunkCalendarModule.getToday();
