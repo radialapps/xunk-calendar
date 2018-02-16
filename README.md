@@ -1,6 +1,7 @@
 # XunkCalendar
 
-XunkCalendar is a simple calendar component with material design designed for Angular 5+ and Angular Material (might work with earlier versions too!)
+XunkCalendar is a simple calendar component with material design designed for Angular 5+ and Angular Material (might work with earlier versions too!).
+A live demo can be found at https://go-xunk.github.io/xunk-calendar-demo/
 
 # Installation
 
