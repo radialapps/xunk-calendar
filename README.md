@@ -29,7 +29,7 @@ First, import `XunkCalendarModule` into `app.module`. You may then use the compo
 
 Note that month starts with 0, but date starts with 1. To quickly make the initial selected date to today, you may do
 ```typescript
-	selDate = XunkCalendarModule.getToday();
+selDate = XunkCalendarModule.getToday();
 ```
 
 # Dependencies
