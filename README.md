@@ -14,7 +14,7 @@ A live demo can be found at https://go-xunk.github.io/xunk-calendar-demo/
 The package is hosted on npm, so you can install it just by
 
 ```Bash
-npm install xunk-ferrous
+npm install xunk-calendar
 ```
 
 # Usage
