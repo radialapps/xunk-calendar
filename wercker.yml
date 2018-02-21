@@ -30,5 +30,5 @@ build:
     - script:
         name: build
         code: |
-          echo "npm run build"
-          echo "npm run packagr"
+          npm run build
+          npm run packagr
