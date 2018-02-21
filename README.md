@@ -9,6 +9,7 @@ A live demo can be found at https://go-xunk.github.io/xunk-calendar-demo/
 [![GitHub version](https://badge.fury.io/gh/radialapps%2Fxunk-calendar.svg)](https://badge.fury.io/gh/radialapps%2Fxunk-calendar)
 [![GitHub license](https://img.shields.io/github/license/radialapps/xunk-calendar.svg)](https://github.com/radialapps/xunk-calendar/blob/master/LICENSE)
 [![Dependencies](https://david-dm.org/radialapps/xunk-calendar/status.svg)](https://david-dm.org/radialapps/xunk-calendar)
+[![Dev Dependencies](https://david-dm.org/radialapps/xunk-calendar/dev-status.svg)](https://david-dm.org/radialapps/xunk-calendar?type=dev)
 
 [![npm version](https://badge.fury.io/js/xunk-calendar.svg)](https://badge.fury.io/js/xunk-calendar)
 
