@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { XunkCalendarModule } from './modules/xunk-calendar/xunk-calendar.module';
+import { XunkCalendarModule } from '../xunk-calendar/xunk-calendar.module';
 
 @NgModule({
   declarations: [

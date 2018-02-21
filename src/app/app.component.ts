@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { XunkCalendarModule } from './modules/xunk-calendar/xunk-calendar.module';
+import { XunkCalendarModule } from '../xunk-calendar/xunk-calendar.module';
 
 @Component({
-  selector: 'app-root',
+  selector: 'xunk-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

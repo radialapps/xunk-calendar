@@ -1,3 +1,3 @@
 // Public API
 
-export * from './src/app/modules/xunk-calendar/xunk-calendar.module'
+export * from './src/xunk-calendar/xunk-calendar.module'

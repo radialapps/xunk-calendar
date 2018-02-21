@@ -126,7 +126,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "xunk",
       "kebab-case"
     ],
     "no-output-on-prefix": true,
