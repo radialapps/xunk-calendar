@@ -4,6 +4,7 @@ XunkCalendar is a simple calendar component with material design designed for An
 A live demo can be found at https://go-xunk.github.io/xunk-calendar-demo/
 
 [![wercker status](https://app.wercker.com/status/2e408ee45406b11f458c813a7b3ccaf5/s/master "wercker status")](https://app.wercker.com/project/byKey/2e408ee45406b11f458c813a7b3ccaf5)
+[![CircleCI](https://circleci.com/gh/radialapps/xunk-calendar.svg?style=shield)](https://circleci.com/gh/radialapps/xunk-calendar)
 [![GitHub license](https://img.shields.io/github/license/radialapps/xunk-calendar.svg)](https://github.com/radialapps/xunk-calendar/blob/master/LICENSE)
 [![Dependencies](https://david-dm.org/radialapps/xunk-calendar/status.svg)](https://david-dm.org/radialapps/xunk-calendar)
 
