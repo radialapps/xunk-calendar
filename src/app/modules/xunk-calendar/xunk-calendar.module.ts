@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MatIconModule } from '@angular/material/icon';
@@ -12,7 +12,7 @@ import { XunkCalendarComponent } from './xunk-calendar.component';
     declarations: [
         XunkCalendarComponent
     ],
-    imports: [ 
+    imports: [
         CommonModule,
         BrowserModule,
         MatIconModule,
@@ -22,12 +22,12 @@ import { XunkCalendarComponent } from './xunk-calendar.component';
         XunkCalendarComponent
     ]
 })
-export class XunkCalendarModule { 
+export class XunkCalendarModule {
     public static getToday(): any {
-        let dateNow = new Date();
+        const dateNow = new Date();
         return {
           date: dateNow.getDate(),
-          month: dateNow.getMonth(), 
+          month: dateNow.getMonth(),
           year: dateNow.getFullYear()
         };
     }
