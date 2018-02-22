@@ -73,7 +73,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
       /*Check if date is today */
       if (col === this.today.date &&
-                 this.samePage(this.openPage, this.today)) {
+        this.samePage(this.openPage, this.today)) {
         return 'primary';
       }
 
