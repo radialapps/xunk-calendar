@@ -112,23 +112,15 @@ import { Component, OnInit, Input } from '@angular/core';
     /** Compute the calendar */
     public displayCalendar() {
       /* Generate a new object */
-      const newCalendar = [];
+      const newCalendar = [[]];
 
       const month = this.openPage.month;
       const year = this.openPage.year;
 
       /* Days in next month, and day of week */
-      const nextDate = new Date(year, month + 1);
+      let col = new Date(year, month, 0).getDay();
+      let row = 0, counter = 1;
       const numOfDays = Number(this.getDaysOfMonth(month, year));
-      let weekdays = nextDate.getDay();
-
-      let col = 0, row = 0, counter = 1;
-      newCalendar[row] = [];
-
-      /* This leaves a white space for days of the previous month */
-      while (weekdays-- > 0) {
-        newCalendar[row][col++] = '';
-      }
 
       /* Loop to build the calendar body */
       while (counter <= numOfDays) {
