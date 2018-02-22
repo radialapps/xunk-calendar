@@ -57,23 +57,25 @@ import { Component, OnInit, Input } from '@angular/core';
       this.displayCalendar();
     }
 
-    /** Returns true if two dates are on same page */
-    public samePage(a, b): boolean {
-      return a.month === b.month &&
+    /**
+     * Returns true if two dates are the same
+     * with the date taken separately
+     */
+    public sameDate(date, a, b): boolean {
+      return date === b.date &&
+             a.month === b.month &&
              a.year === b.year;
     }
 
     /** Returns true if fab! */
     public isFab(col: number): string {
       /* Check if date is selected */
-      if (col === this.selectedDate.date &&
-        this.samePage(this.openPage, this.selectedDate)) {
+      if (this.sameDate(col, this.openPage, this.selectedDate)) {
         return 'warn';
       }
 
       /*Check if date is today */
-      if (col === this.today.date &&
-        this.samePage(this.openPage, this.today)) {
+      if (this.sameDate(col, this.openPage, this.today)) {
         return 'primary';
       }
 
