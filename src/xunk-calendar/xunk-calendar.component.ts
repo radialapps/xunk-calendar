@@ -120,22 +120,22 @@ import { Component, OnInit, Input } from '@angular/core';
       let weekdays2 = weekdays;
       const numOfDays = Number(dayPerMonth[month]);
 
-      /* This leaves a white space for days of pervious month */
       let colno = 0;
       let rowno = 0;
 
       newCalendar[rowno] = [];
 
+      /* This leaves a white space for days of the previous month */
       while (weekdays > 0) {
         newCalendar[rowno][colno] = '';
         colno++;
         weekdays--;
       }
 
-      // loop to build the calander body.
+      /* Loop to build the calander body */
       while (counter <= numOfDays) {
 
-         // When to start new line.
+         /* When to start new line */
          if (weekdays2 > 6) {
              weekdays2 = 0;
              rowno++;
@@ -143,16 +143,20 @@ import { Component, OnInit, Input } from '@angular/core';
              newCalendar[rowno] = [];
          }
 
+         /* Set the value */
          newCalendar[rowno][colno] = counter;
 
+         /* Increment all counters */
          colno++;
          weekdays2++;
          counter++;
       }
 
+      /* Set the calendar to the newly computed one */
       this.calendar = newCalendar;
      }
 
+     /* Get today's date */
      private getToday(): any {
         const dateNow = new Date();
         return {

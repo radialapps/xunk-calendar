@@ -23,6 +23,8 @@ import { XunkCalendarComponent } from './xunk-calendar.component';
     ]
 })
 export class XunkCalendarModule {
+
+    /* Gets today's date */
     public static getToday(): any {
         const dateNow = new Date();
         return {

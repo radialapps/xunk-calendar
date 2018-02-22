@@ -1,20 +1,26 @@
 <table class="xunk-calendar mat-elevation-z6">
+
+  <!-- Header for changing month -->
   <tr>
-      <th> 
-          <button mat-icon-button (click)="changeMonth(-1)" >
+      <!-- Previous month button -->
+      <th>
+          <button mat-icon-button (click)="changeMonth(-1)">
               <mat-icon>keyboard_arrow_left</mat-icon>
-          </button> 
+          </button>
       </th>
 
+      <!-- Month label -->
       <th colspan=5>{{monthNames[openPage.month].toUpperCase()}}</th>
 
-      <th> 
+      <!-- Next month button -->
+      <th>
           <button mat-icon-button (click)="changeMonth(1)">
               <mat-icon>keyboard_arrow_right</mat-icon>
           </button>
       </th>
   </tr>
-  
+
+  <!-- The real calendar -->
   <tr *ngFor="let row of calendar">
       <td class="xunk-calendar-cell" *ngFor="let col of row">
           <ng-container *ngIf="col != ''">
