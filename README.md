@@ -56,4 +56,4 @@ ngOnInit() {
 ```
 
 # Contributing
-Contributing is free! You are welcome to criticize, help write code, file bugs or give me a lesson on how to properly comment code, as long as no one gets sued!
+Contributing is free! You are welcome to criticize, help write code, file bugs or give me a lesson on how to properly comment code, as long as no one gets sued! If there is one thing, since circle ci's build will test for it, it is absolutely imperative to lint your code with `ng lint`.
