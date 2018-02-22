@@ -36,4 +36,4 @@ jobs:
       # run tests!
       - run: npm run build
       - run: npm run packagr
-      - run: ng lint
+      - run: npm run lint
