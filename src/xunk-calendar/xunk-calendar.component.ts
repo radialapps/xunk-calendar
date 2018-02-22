@@ -32,12 +32,22 @@ import { Component, OnInit, Input } from '@angular/core';
         'Thrusday', 'Friday', 'Saturday'
       ];
 
+    /* Get today's date */
+    public static getToday(): any {
+      const dateNow = new Date();
+      return {
+        date: dateNow.getDate(),
+        month: dateNow.getMonth(),
+        year: dateNow.getFullYear()
+      };
+    }
+
     /** CalendarComponent */
     constructor() {
       /* Initialize */
       this.calendar = [];
 
-      this.today = this.getToday();
+      this.today = XunkCalendarComponent.getToday();
       this.openPage = {...this.today};
       this.selectedDate = {...this.today};
     }
@@ -164,14 +174,4 @@ import { Component, OnInit, Input } from '@angular/core';
       /* Set the calendar to the newly computed one */
       this.calendar = newCalendar;
      }
-
-     /* Get today's date */
-     private getToday(): any {
-        const dateNow = new Date();
-        return {
-          date: dateNow.getDate(),
-          month: dateNow.getMonth(),
-          year: dateNow.getFullYear()
-        };
-    }
 }

@@ -26,11 +26,6 @@ export class XunkCalendarModule {
 
     /* Gets today's date */
     public static getToday(): any {
-        const dateNow = new Date();
-        return {
-          date: dateNow.getDate(),
-          month: dateNow.getMonth(),
-          year: dateNow.getFullYear()
-        };
+      return XunkCalendarComponent.getToday();
     }
 }
