@@ -5,6 +5,7 @@ A live demo can be found at https://go-xunk.github.io/xunk-calendar-demo/
 
 [![wercker status](https://app.wercker.com/status/2e408ee45406b11f458c813a7b3ccaf5/s/master "wercker status")](https://app.wercker.com/project/byKey/2e408ee45406b11f458c813a7b3ccaf5)
 [![CircleCI](https://circleci.com/gh/radialapps/xunk-calendar.svg?style=shield)](https://circleci.com/gh/radialapps/xunk-calendar)
+[![Maintainability](https://api.codeclimate.com/v1/badges/83af59f2a3f6e593e4dc/maintainability)](https://codeclimate.com/github/radialapps/xunk-calendar/maintainability)
 
 [![GitHub version](https://badge.fury.io/gh/radialapps%2Fxunk-calendar.svg)](https://badge.fury.io/gh/radialapps%2Fxunk-calendar)
 [![GitHub license](https://img.shields.io/github/license/radialapps/xunk-calendar.svg)](https://github.com/radialapps/xunk-calendar/blob/master/LICENSE)
