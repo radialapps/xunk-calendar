@@ -114,36 +114,16 @@ import { Component, OnInit, Input } from '@angular/core';
       /* Generate a new object */
       const newCalendar = [];
 
-      let FebNumberOfDays: number;
-      let counter = 1;
-
       const month = this.openPage.month;
-      const nextMonth = month + 1;
-      const prevMonth = month - 1;
-
+      const nextMonth = month + 1, prevMonth = month - 1;
       const year = this.openPage.year;
-
-      /* Check leap years */
-      if (month === 1) {
-         if ( (year % 100 !== 0) && (year % 4 === 0) || (year % 400 === 0)) {
-           FebNumberOfDays = 29;
-         } else {
-           FebNumberOfDays = 28;
-         }
-      }
-
-      const dayPerMonth = ['31', FebNumberOfDays, '31', '30', '31', '30',
-        '31', '31', '30', '31', '30', '31'];
 
       /* Days in previous month and next one , and day of week */
       const nextDate = new Date(year, nextMonth);
-      let weekdays = nextDate.getDay();
-      let weekdays2 = weekdays;
-      const numOfDays = Number(dayPerMonth[month]);
+      let weekdays = nextDate.getDay(), weekdays2 = weekdays;
+      const numOfDays = Number(this.getDaysOfMonth(month, year));
 
-      let colno = 0;
-      let rowno = 0;
-
+      let colno = 0, rowno = 0, counter = 1;
       newCalendar[rowno] = [];
 
       /* This leaves a white space for days of the previous month */
@@ -155,7 +135,6 @@ import { Component, OnInit, Input } from '@angular/core';
 
       /* Loop to build the calander body */
       while (counter <= numOfDays) {
-
          /* When to start new line */
          if (weekdays2 > 6) {
              weekdays2 = 0;
@@ -175,5 +154,20 @@ import { Component, OnInit, Input } from '@angular/core';
 
       /* Set the calendar to the newly computed one */
       this.calendar = newCalendar;
-     }
+    }
+
+    /** Gets the DaysPerMonth array */
+    public getDaysOfMonth(month: number, year: number): number {
+      /* Check leap years */
+      if (month === 1) {
+        if ( (year % 100 !== 0) && (year % 4 === 0) || (year % 400 === 0)) {
+          return 29;
+        } else {
+          return 28;
+        }
+      }
+
+      return [31, 0, 31, 30, 31, 30,
+        31, 31, 30, 31, 30, 31][month];
+      }
 }
