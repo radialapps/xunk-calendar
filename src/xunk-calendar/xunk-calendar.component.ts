@@ -115,41 +115,31 @@ import { Component, OnInit, Input } from '@angular/core';
       const newCalendar = [];
 
       const month = this.openPage.month;
-      const nextMonth = month + 1, prevMonth = month - 1;
       const year = this.openPage.year;
 
-      /* Days in previous month and next one , and day of week */
-      const nextDate = new Date(year, nextMonth);
-      let weekdays = nextDate.getDay(), weekdays2 = weekdays;
+      /* Days in next month, and day of week */
+      const nextDate = new Date(year, month + 1);
       const numOfDays = Number(this.getDaysOfMonth(month, year));
+      let weekdays = nextDate.getDay();
 
-      let colno = 0, rowno = 0, counter = 1;
-      newCalendar[rowno] = [];
+      let col = 0, row = 0, counter = 1;
+      newCalendar[row] = [];
 
       /* This leaves a white space for days of the previous month */
-      while (weekdays > 0) {
-        newCalendar[rowno][colno] = '';
-        colno++;
-        weekdays--;
+      while (weekdays-- > 0) {
+        newCalendar[row][col++] = '';
       }
 
-      /* Loop to build the calander body */
+      /* Loop to build the calendar body */
       while (counter <= numOfDays) {
          /* When to start new line */
-         if (weekdays2 > 6) {
-             weekdays2 = 0;
-             rowno++;
-             colno = 0;
-             newCalendar[rowno] = [];
+         if (col > 6) {
+             col = 0;
+             newCalendar[++row] = [];
          }
 
-         /* Set the value */
-         newCalendar[rowno][colno] = counter;
-
-         /* Increment all counters */
-         colno++;
-         weekdays2++;
-         counter++;
+         /* Set the value and increment */
+         newCalendar[row][col++] = counter++;
       }
 
       /* Set the calendar to the newly computed one */
