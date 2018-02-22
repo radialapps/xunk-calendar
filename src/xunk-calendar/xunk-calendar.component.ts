@@ -140,16 +140,18 @@ import { Component, OnInit, Input } from '@angular/core';
 
     /** Gets the DaysPerMonth array */
     public getDaysOfMonth(month: number, year: number): number {
-      /* Check leap years */
-      if (month === 1) {
-        if ( (year % 100 !== 0) && (year % 4 === 0) || (year % 400 === 0)) {
-          return 29;
-        } else {
-          return 28;
-        }
+      /* Check leap years if February */
+      if (month === 1 && this.leapYear(year)) {
+        return 29;
       }
 
-      return [31, 0, 31, 30, 31, 30,
+      /** Return the number of days */
+      return [31, 28, 31, 30, 31, 30,
         31, 31, 30, 31, 30, 31][month];
-      }
+    }
+
+    /** Returns true if leap year */
+    public leapYear(year): boolean {
+      return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+    }
 }
