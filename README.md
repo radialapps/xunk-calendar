@@ -3,7 +3,6 @@
 XunkCalendar is a simple calendar component with material design designed for Angular 5+ and Angular Material (might work with earlier versions too!).
 A live demo can be found at https://go-xunk.github.io/xunk-calendar-demo/
 
-[![wercker status](https://app.wercker.com/status/2e408ee45406b11f458c813a7b3ccaf5/s/master "wercker status")](https://app.wercker.com/project/byKey/2e408ee45406b11f458c813a7b3ccaf5)
 [![CircleCI](https://circleci.com/gh/radialapps/xunk-calendar.svg?style=shield)](https://circleci.com/gh/radialapps/xunk-calendar)
 [![Maintainability](https://api.codeclimate.com/v1/badges/83af59f2a3f6e593e4dc/maintainability)](https://codeclimate.com/github/radialapps/xunk-calendar/maintainability)
 
@@ -57,4 +56,4 @@ ngOnInit() {
 ```
 
 # Contributing
-Contributing is free! You are welcome to criticize, help write code, file bugs or give me a lesson on how to properly comment code, as long as no one gets sued! If there is one thing, since circle ci's build will test for it, it is absolutely imperative to lint your code with `ng lint`.
+Contributing is free! You are welcome to criticize, help write code, file bugs or give me a lesson on how to properly comment code! If there is one thing, since circleci's build will test for it, it is absolutely imperative to lint your code (with `ng lint`).
