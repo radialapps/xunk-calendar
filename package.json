@@ -11,7 +11,6 @@
     "packagr": "ng-packagr -p ng-package.json"
   },
   "dependencies": {
-    "@angular-devkit/build-optimizer": "^0.4.5",
     "@angular/animations": "^5.2.8",
     "@angular/cdk": "^5.2.4",
     "@angular/common": "^5.2.8",
@@ -24,10 +23,10 @@
     "@angular/router": "^5.2.8",
     "core-js": "^2.5.3",
     "rxjs": "^5.5.6",
-    "tsickle": "^0.27.2",
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
+    "@angular-devkit/build-optimizer": "^0.4.5",
     "@angular/cli": "^1.7.3",
     "@angular/compiler-cli": "^5.2.8",
     "@angular/language-service": "^5.2.8",
@@ -35,6 +34,7 @@
     "codelyzer": "^4.2.1",
     "ng-packagr": "^2.2.0",
     "ts-node": "~5.0.1",
+    "tsickle": "^0.27.2",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
   }
