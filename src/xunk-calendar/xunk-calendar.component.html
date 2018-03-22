@@ -26,7 +26,10 @@
           <ng-container *ngIf="col != ''">
 
               <ng-container *ngIf="isFab(col); else notFab">
-                  <button mat-mini-fab [color]="isFab(col)" (click)="selectDay(col)">
+                  <button mat-mini-fab
+                          [color]="isFab(col)"
+                          (click)="selectDay(col)"
+                          style="box-shadow: none">
                       {{col}}
                   </button>
               </ng-container>
