@@ -1,9 +1,7 @@
 .xunk-calendar {
     width:100%;             /* fill all space */
-    max-width: 400px;       /* max-width for desktops */
     padding-top: 12px;      /* static padding */
     padding-bottom: 12px;
-    margin: 0 auto;         /* center the calendar */
 }
 
 .xunk-calendar-cell {

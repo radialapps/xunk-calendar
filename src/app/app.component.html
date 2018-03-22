@@ -4,7 +4,9 @@ If you want it in your project, head over to <a href="https://github.com/radiala
 
 <br><br>
 
-<xunk-calendar [selectedDate]="selDate"></xunk-calendar>
+<div class="calendar-container mat-elevation-z3">
+    <xunk-calendar [selectedDate]="selDate"></xunk-calendar>
+</div>
 
 <br>
 Selected Date is {{ selDate.year }}-{{ selDate.month + 1}}-{{ selDate.date }}
