@@ -35,7 +35,11 @@
               </ng-container>
 
               <ng-template #notFab>
-                  <button mat-icon-button (click)="selectDay(col)">{{col}}</button>
+                  <button mat-icon-button [color]="isToday(col)"
+                         (click)="selectDay(col)">
+                    <ng-container *ngIf="isToday(col); else notToday"><b>{{col}}</b></ng-container>
+                    <ng-template #notToday>{{col}}</ng-template>
+                  </button>
               </ng-template>
 
           </ng-container>

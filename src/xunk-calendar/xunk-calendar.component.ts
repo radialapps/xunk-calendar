@@ -71,15 +71,18 @@ import { Component, OnInit, Input } from '@angular/core';
     public isFab(col: number): string {
       /* Check if date is selected */
       if (this.sameDate(col, this.openPage, this.selectedDate)) {
-        return 'warn';
-      }
-
-      /*Check if date is today */
-      if (this.sameDate(col, this.openPage, this.today)) {
         return 'primary';
       }
 
       /* No matches found */
+      return '';
+    }
+
+    /** Returns 'primary' if col is today */
+    isToday(col: number): string {
+      if (this.sameDate(col, this.openPage, this.today)) {
+        return 'primary';
+      }
       return '';
     }
 
