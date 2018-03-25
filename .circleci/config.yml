@@ -33,10 +33,24 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
-      # run tests!
-      - run: npm run build
-      - run: git config --global user.name "Xunk-Bot" && git config --global user.email "xunk@radialapps.com" && git config --global push.default matching
-      - run: git clone git@github.com:go-xunk/xunk-calendar-demo.git goxunk
-      - run: cd goxunk && rm -r * && cp -R ../dist/* ./ && sed -i 's#<base href="/">#<base href="/xunk-calendar-demo/">#g' index.html && git add -A && git commit -m "Automated Build" && git push && cd ..
-      - run: npm run packagr
-      - run: npm run lint
+      # Lint and Build      
+      - run:
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Package
+          command: npm run packagr
+
+      # Deploy Demo
+      - run:
+          name: Setup Git
+          command: git config --global user.name "Xunk-Bot" && git config --global user.email "xunk@radialapps.com" && git config --global push.default matching
+      - run:
+          name: Clone Demo
+          command: git clone git@github.com:go-xunk/xunk-calendar-demo.git deploy
+      - run:
+          name: Build Demo
+          command: rm -r dist && npm run build
+      - run:
+          name: Deploy
+          command: cd deploy && rm -r * && cp -R ../dist/* ./ && date > BUILD_TIME && sed -i 's#<base href="/">#<base href="/xunk-calendar-demo/">#g' index.html && git add -A && git commit -m "Automated Build" && git push && cd ..
