@@ -35,5 +35,8 @@ jobs:
         
       # run tests!
       - run: npm run build
+      - run: git config --global user.name "Xunk-Bot" && git config --global user.email "xunk@radialapps.com" && git config --global push.default matching
+      - run: git clone git@github.com:go-xunk/xunk-calendar-demo.git goxunk
+      - run: cd goxunk && rm -r * && cp -R ../dist/* ./ && sed -i 's#<base href="/">#<base href="/xunk-calendar-demo/">#g' index.html && git add -A && git commit -m "Automated Build" && git push && cd ..
       - run: npm run packagr
       - run: npm run lint
