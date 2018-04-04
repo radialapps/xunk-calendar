@@ -15,4 +15,9 @@ export class AppComponent implements OnInit {
       this.selDate = XunkCalendarModule.getToday();
   }
 
+  /** Log changes in date */
+  dateChanged(data: any) {
+    console.log(data);
+  }
+
 }

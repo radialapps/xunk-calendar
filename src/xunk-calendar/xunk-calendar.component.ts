@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'xunk-calendar',
@@ -18,6 +18,9 @@ import { Component, OnInit, Input } from '@angular/core';
 
     /** Array with all the calendar data */
     @Input() public calendar: any[] = [];
+
+    /** Emits the new date on change */
+    @Output() change: EventEmitter<any> = new EventEmitter();
 
     /** Constants */
     public readonly monthNames =
@@ -91,6 +94,7 @@ import { Component, OnInit, Input } from '@angular/core';
       this.selectedDate.date = col;
       this.selectedDate.month = this.openPage.month;
       this.selectedDate.year = this.openPage.year;
+      this.change.emit(this.selectedDate);
     }
 
     /** Change the month +1 or -1 */
