@@ -33,7 +33,7 @@
   <!-- The real calendar -->
   <tr *ngFor="let row of calendar">
       <td class="xunk-calendar-cell" *ngFor="let col of row">
-          <ng-container *ngIf="col != ''">
+          <ng-container *ngIf="col">
 
               <ng-container *ngIf="isFab(col); else notFab">
                   <button mat-mini-fab
