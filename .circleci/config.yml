@@ -35,19 +35,11 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # Lint and Build      
-      - run:
-          name: Lint
-          command: npm run lint
-      - run:
-          name: Package
-          command: npm run packagr
 
       # Deploy Demo
       - run:
           name: Build Demo
-          command: rm -r dist && npm run build
+          command: npm run build
       - run:
           name: Deploy
           command: chmod 777 deploy.sh && ./deploy.sh
