@@ -6,7 +6,6 @@ cache:
   - node_modules
 script:
 - npm run lint
-after_success:
 - npm run packagr
 before_deploy:
 - cd dist
