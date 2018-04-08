@@ -1,41 +1,42 @@
 {
-  "name": "xunk-calendar",
-  "description": "Simple calendar component for Angular 5+ and Angular Material",
-  "version": "1.6.3",
+  "name": "xunk-calendar-demo",
+  "description": "Demo for xunk-calendar",
+  "version": "1.6.4",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
     "lint": "ng lint",
-    "packagr": "ng-packagr -p ng-package.json"
+    "packagr": "ng-packagr -p lib/package.json"
   },
   "dependencies": {
-    "@angular/animations": "^5.2.8",
+    "@angular/animations": "^5.2.9",
     "@angular/cdk": "^5.2.4",
-    "@angular/common": "^5.2.8",
-    "@angular/compiler": "^5.2.8",
-    "@angular/core": "^5.2.8",
-    "@angular/forms": "^5.2.8",
+    "@angular/common": "^5.2.9",
+    "@angular/compiler": "^5.2.9",
+    "@angular/core": "^5.2.9",
+    "@angular/forms": "^5.2.9",
     "@angular/material": "^5.2.4",
-    "@angular/platform-browser": "^5.2.8",
-    "@angular/platform-browser-dynamic": "^5.2.8",
-    "@angular/router": "^5.2.8",
-    "core-js": "^2.5.3",
-    "rxjs": "^5.5.6",
-    "zone.js": "^0.8.20"
+    "@angular/platform-browser": "^5.2.9",
+    "@angular/platform-browser-dynamic": "^5.2.9",
+    "@angular/router": "^5.2.9",
+    "core-js": "^2.5.4",
+    "rxjs": "^5.5.8",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-optimizer": "^0.4.5",
-    "@angular/cli": "^1.7.3",
-    "@angular/compiler-cli": "^5.2.8",
-    "@angular/language-service": "^5.2.8",
-    "@types/node": "~9.4.7",
+    "@angular-devkit/build-optimizer": "^0.5.4",
+    "@angular/cli": "^1.7.4",
+    "@angular/compiler-cli": "^5.2.9",
+    "@angular/language-service": "^5.2.9",
+    "@types/node": "~9.6.2",
     "codelyzer": "^4.2.1",
-    "ng-packagr": "^2.2.0",
+    "ng-packagr": "^2.4.1",
     "ts-node": "~5.0.1",
-    "tsickle": "^0.27.2",
+    "tsickle": "^0.27.5",
     "tslint": "~5.9.1",
-    "typescript": "~2.7.2"
+    "typescript": "~2.8.1",
+    "uglify-js": "3.3.18"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "name": "xunk-calendar",
+  "description": "Simple calendar component for Angular 5+ and Angular Material",
+  "version": "1.6.5",
+  "repository": "https://github.com/radialapps/xunk-calendar",
+  "author": "Varun Patil <radialapps@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/cdk": "^5.2.4",
+    "@angular/common": "^5.2.9",
+    "@angular/core": "^5.2.9",
+    "@angular/material": "^5.2.4"
+  },
+  "ngPackage": {
+    "$schema": "../node_modules/ng-packagr/ng-package.schema.json",
+    "lib": {
+      "entryFile": "../public_api.ts"
+    },
+    "dest": "../dist"
+  }
+}
