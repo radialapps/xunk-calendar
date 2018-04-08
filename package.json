@@ -1,16 +1,16 @@
 {
-  "name": "xunk-calendar",
-  "description": "Simple calendar component for Angular 5+ and Angular Material",
-  "version": "1.6.4",
+  "name": "xunk-calendar-demo",
+  "description": "Demo for xunk-calendar",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
     "lint": "ng lint",
-    "packagr": "ng-packagr -p ng-package.json"
+    "packagr": "ng-packagr -p lib/package.json"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@angular/animations": "^5.2.9",
     "@angular/cdk": "^5.2.4",
     "@angular/common": "^5.2.9",
