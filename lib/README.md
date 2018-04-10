@@ -1,12 +1,12 @@
 # XunkCalendar
 
 XunkCalendar is a simple calendar component with material design designed for Angular 5+ and Angular Material (might work with earlier versions too!).
-A live demo can be found at https://go-xunk.github.io/xunk-calendar-demo/
+A live demo can be found at https://radialapps.github.io/xunk-calendar/
 
 [![CircleCI](https://circleci.com/gh/radialapps/xunk-calendar.svg?style=shield)](https://circleci.com/gh/radialapps/xunk-calendar)
 [![Build Status](https://travis-ci.org/radialapps/xunk-calendar.svg?branch=master)](https://travis-ci.org/radialapps/xunk-calendar)
 
-[![demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://go-xunk.github.io/xunk-calendar-demo/)
+[![demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://radialapps.github.io/xunk-calendar/)
 [![Maintainability](https://api.codeclimate.com/v1/badges/83af59f2a3f6e593e4dc/maintainability)](https://codeclimate.com/github/radialapps/xunk-calendar/maintainability)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3b4ce4ee34a74d428aed7826c70f7c47)](https://www.codacy.com/app/pulsejet/xunk-calendar?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=radialapps/xunk-calendar&amp;utm_campaign=Badge_Grade)
 
