@@ -24,8 +24,8 @@ deploy:
 
   - provider: pages
     skip-cleanup: true
-    keep-history: true
+    keep-history: false
     github-token: $GITHUB_TOKEN
-    local-dir: ../dist
+    local-dir: dist
     on:
       branch: master
