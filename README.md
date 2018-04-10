@@ -3,7 +3,6 @@
 XunkCalendar is a simple calendar component with material design designed for Angular 5+ and Angular Material (might work with earlier versions too!).
 A live demo can be found at https://radialapps.github.io/xunk-calendar/
 
-[![CircleCI](https://circleci.com/gh/radialapps/xunk-calendar.svg?style=shield)](https://circleci.com/gh/radialapps/xunk-calendar)
 [![Build Status](https://travis-ci.org/radialapps/xunk-calendar.svg?branch=master)](https://travis-ci.org/radialapps/xunk-calendar)
 
 [![demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://radialapps.github.io/xunk-calendar/)
