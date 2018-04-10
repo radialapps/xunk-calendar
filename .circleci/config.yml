@@ -39,7 +39,7 @@ jobs:
       # Deploy Demo
       - run:
           name: Build Demo
-          command: npm run build
+          command: npm run build-demo
       - run:
           name: Deploy
           command: chmod 777 deploy.sh && ./deploy.sh
