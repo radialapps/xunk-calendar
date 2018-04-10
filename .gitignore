@@ -1,10 +1,10 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-
+*.tgz
 .ng_pkg_build
 
 # compiled output
 /dist
-/dist-server
+/dist-lib
 /tmp
 /out-tsc
 

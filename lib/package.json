@@ -16,6 +16,6 @@
     "lib": {
       "entryFile": "../public_api.ts"
     },
-    "dest": "../dist"
+    "dest": "../dist-lib"
   }
 }

@@ -7,14 +7,25 @@ cache:
 script:
 - npm run lint
 - npm run packagr
+- npm run build-demo
+
 before_deploy:
-- cd dist
+- cd dist-lib
+
 deploy:
-  provider: npm
-  email: radialapps@gmail.com
-  api_key:
-    secure: bq4RLEXeggPZSc+orlMPoZYNIkIsrOVypU+dx5FMqIldq3AfQrxMUqbOMKxgW3cRt7QUL/BxNcL0wTbTUbUjyaxWdg27OVSFAgQzDufEhAG6SfTlZ2EwThmHrBXUNIMf6vYHi2dQXsY3+aTCUNCFs6UdbVQWOr2RcyxQp50/ohBQ3uqCU4KxdO/BcnNuUPjyHgAZKi0sool5m9QxWuO3RO08qHpR0soZpU3vXZv5tDF0IhAx6DIyxMAptBIOnLT28k1hnELETJDPIvMGW0anjI0J8y/m6eQN/2WBnO6WFGtbbB37Z/6AhUc7hVF3JM0ZDPmfJ7iw79GHWj5PLaRUFVdY1MJQ40X8GJpRby/S6HY6re2PRR8ioFtEgBHMDIwOHGBMl1VnSzdxBz8Jz9i/1O2cGF9salnqlNJEvF5PczHMZtdPFr7NfvvtDIDlp+GdwLfzEydDa/B4fs81uPDQm5JjChZJWD8I6K/QgOg53uz5T77boUcmhv/fGreDl3h6gczR/ZdplaaFXT5I8U4MEU3VZygH0MmavRQPuwHwtUWrkvbMustophBHDA2f4ltx+WpoYq7zblFNt3fhNebssugrv2wzYswoBZkOHhwFxMS9T9mpfQHmrOq859GVdjiNXFANpuYE33fznBiRhnqpwjj1yHjIivbYRd0miFtVg7Q=
-  skip_cleanup: true
-  on:
-    tags: true
-    repo: radialapps/xunk-calendar
+  - provider: npm
+    email: radialapps@gmail.com
+    api_key:
+      secure: bq4RLEXeggPZSc+orlMPoZYNIkIsrOVypU+dx5FMqIldq3AfQrxMUqbOMKxgW3cRt7QUL/BxNcL0wTbTUbUjyaxWdg27OVSFAgQzDufEhAG6SfTlZ2EwThmHrBXUNIMf6vYHi2dQXsY3+aTCUNCFs6UdbVQWOr2RcyxQp50/ohBQ3uqCU4KxdO/BcnNuUPjyHgAZKi0sool5m9QxWuO3RO08qHpR0soZpU3vXZv5tDF0IhAx6DIyxMAptBIOnLT28k1hnELETJDPIvMGW0anjI0J8y/m6eQN/2WBnO6WFGtbbB37Z/6AhUc7hVF3JM0ZDPmfJ7iw79GHWj5PLaRUFVdY1MJQ40X8GJpRby/S6HY6re2PRR8ioFtEgBHMDIwOHGBMl1VnSzdxBz8Jz9i/1O2cGF9salnqlNJEvF5PczHMZtdPFr7NfvvtDIDlp+GdwLfzEydDa/B4fs81uPDQm5JjChZJWD8I6K/QgOg53uz5T77boUcmhv/fGreDl3h6gczR/ZdplaaFXT5I8U4MEU3VZygH0MmavRQPuwHwtUWrkvbMustophBHDA2f4ltx+WpoYq7zblFNt3fhNebssugrv2wzYswoBZkOHhwFxMS9T9mpfQHmrOq859GVdjiNXFANpuYE33fznBiRhnqpwjj1yHjIivbYRd0miFtVg7Q=
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: radialapps/xunk-calendar
+
+  - provider: pages
+    skip-cleanup: true
+    keep-history: true
+    github-token: $GITHUB_TOKEN
+    local-dir: ../dist
+    on:
+      branch: master
