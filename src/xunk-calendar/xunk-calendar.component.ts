@@ -19,6 +19,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     /** Array with all the calendar data */
     @Input() public calendar: any[] = [];
 
+    /** RGB for heat map */
+    @Input() public RGB_HM: any = {R: 0, G: 255, B: 0};
+
+    @Input() public heatmap = {};
+
     /** Emits the new date on change */
     @Output() change: EventEmitter<any> = new EventEmitter();
 
@@ -160,5 +165,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     /** Returns true if leap year */
     public leapYear(year): boolean {
       return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+    }
+
+    /* Gets the heat map color */
+    public getHM(day): string {
+      if (day in this.heatmap) {
+        return `rgba(${this.RGB_HM.R}, ${this.RGB_HM.G}, ${this.RGB_HM.B}, ${this.heatmap[day]})`;
+      } else {
+        return 'inherit';
+      }
     }
 }

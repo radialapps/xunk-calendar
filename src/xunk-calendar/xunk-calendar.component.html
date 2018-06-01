@@ -47,6 +47,7 @@
 
               <ng-template #notFab>
                   <button mat-icon-button [color]="isToday(col)"
+                         [style.background-color]="getHM(col)"
                          (click)="selectDay(col)">
                     <ng-container *ngIf="isToday(col); else notToday"><b>{{col}}</b></ng-container>
                     <ng-template #notToday>{{col}}</ng-template>
