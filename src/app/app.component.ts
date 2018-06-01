@@ -12,11 +12,8 @@ export class AppComponent implements OnInit {
   public selDate = { date: 1, month: 1, year: 1 };
 
   public heatmap = {
-    1: 0.8,
-    2: 0.5,
-    3: 0.3,
-    4: 0.1,
-    27: 0.5
+    20180604: 0.5,
+    20180709: 0.2
   };
 
   ngOnInit() {

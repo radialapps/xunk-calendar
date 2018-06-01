@@ -167,12 +167,20 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
     }
 
-    /* Gets the heat map color */
+    /** Gets the heat map color */
     public getHM(day): string {
-      if (day in this.heatmap) {
-        return `rgba(${this.RGB_HM.R}, ${this.RGB_HM.G}, ${this.RGB_HM.B}, ${this.heatmap[day]})`;
+      const ind = (this.zeropad(this.openPage.year, 4) + this.zeropad(this.openPage.month + 1, 2) + this.zeropad(day, 2));
+      if (ind in this.heatmap) {
+        return `rgba(${this.RGB_HM.R}, ${this.RGB_HM.G}, ${this.RGB_HM.B}, ${this.heatmap[ind]})`;
       } else {
         return 'inherit';
       }
+    }
+
+    /** Pad number with zeros */
+    private zeropad(num, padlen, padchar = '0') {
+        const pad_char = typeof padchar !== 'undefined' ? padchar : '0';
+        const pad = new Array(1 + padlen).join(pad_char);
+        return (pad + num).slice(-pad.length);
     }
 }
