@@ -1,6 +1,6 @@
 # XunkCalendar
 
-XunkCalendar is a simple calendar component with material design designed for Angular 6+ and Angular Material (might work with earlier versions too!).
+XunkCalendar is a simple calendar component with material design designed for Angular 6+ and Angular Material (might work with earlier versions too!). It allows creation of a heatmap for dates (with strange syntax, since this was designed for a specific project). Check the demo app's source for how to do this.
 A live demo can be found at https://radialapps.github.io/xunk-calendar/
 
 [![Build Status](https://travis-ci.org/radialapps/xunk-calendar.svg?branch=master)](https://travis-ci.org/radialapps/xunk-calendar)

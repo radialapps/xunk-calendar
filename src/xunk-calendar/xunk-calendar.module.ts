@@ -26,4 +26,9 @@ export class XunkCalendarModule {
     public static getToday(): any {
       return XunkCalendarComponent.getToday();
     }
+
+    /** Pad number with zeros */
+    public static zeroPad(num, padlen, padchar = '0'): string {
+        return XunkCalendarComponent.zeropad(num, padlen, padchar);
+    }
 }

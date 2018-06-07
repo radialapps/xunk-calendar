@@ -50,6 +50,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       };
     }
 
+    /** Pad number with zeros */
+    public static zeropad(num, padlen, padchar = '0'): string {
+      const pad_char = typeof padchar !== 'undefined' ? padchar : '0';
+      const pad = new Array(1 + padlen).join(pad_char);
+      return (pad + num).slice(-pad.length);
+    }
+
     /** CalendarComponent */
     constructor() {
       /* Initialize */
@@ -169,18 +176,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
     /** Gets the heat map color */
     public getHM(day): string {
-      const ind = (this.zeropad(this.openPage.year, 4) + this.zeropad(this.openPage.month + 1, 2) + this.zeropad(day, 2));
+      const zeropad = XunkCalendarComponent.zeropad;
+      const ind = (zeropad(this.openPage.year, 4) + zeropad(this.openPage.month + 1, 2) + zeropad(day, 2));
       if (ind in this.heatmap) {
         return `rgba(${this.RGB_HM.R}, ${this.RGB_HM.G}, ${this.RGB_HM.B}, ${this.heatmap[ind]})`;
       } else {
         return 'inherit';
       }
-    }
-
-    /** Pad number with zeros */
-    private zeropad(num, padlen, padchar = '0') {
-        const pad_char = typeof padchar !== 'undefined' ? padchar : '0';
-        const pad = new Array(1 + padlen).join(pad_char);
-        return (pad + num).slice(-pad.length);
     }
 }
