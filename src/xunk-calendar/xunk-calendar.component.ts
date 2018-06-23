@@ -20,13 +20,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     @Input() public calendar: any[] = [];
 
     /** Color for heat map */
-    @Input() public heatMapColor;
+    @Input() public heatMapColor = '#00ff00';
 
     /** Color for primary */
-    @Input() public primaryColor;
+    @Input() public primaryColor = '#ff0000';
 
     /** Color for primary foreground */
-    @Input() public primaryForeground;
+    @Input() public primaryForeground = 'white';
 
     @Input() public heatmap = {};
 
