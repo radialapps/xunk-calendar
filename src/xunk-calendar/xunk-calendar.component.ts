@@ -54,7 +54,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     public static parseColor(input) {
       const div = document.createElement('div');
       div.style.color = input;
+      document.body.appendChild(div);
       const m = getComputedStyle(div).color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i);
+      document.body.removeChild(div);
+
       if (m) {
         return {R: m[1], G: m[2], B: m[3]};
       } else {
