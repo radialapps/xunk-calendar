@@ -19,13 +19,23 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     /** Array with all the calendar data */
     @Input() public calendar: any[] = [];
 
-    /** RGB for heat map */
-    @Input() public RGB_HM: any = {R: 0, G: 255, B: 0};
+    /** Color for heat map */
+    @Input() public heatMapColor;
+
+    /** Color for primary */
+    @Input() public primaryColor;
+
+    /** Color for primary foreground */
+    @Input() public primaryForeground;
 
     @Input() public heatmap = {};
 
     /** Emits the new date on change */
     @Output() change: EventEmitter<any> = new EventEmitter();
+
+    private RGB_HM: any;
+    private RGB_Primary: any;
+    private RGB_Primary_FG: any;
 
     /** Constants */
     public readonly monthNames =
@@ -39,6 +49,18 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         'Sunday', 'Monday', 'Tuesday', 'Wednesday',
         'Thrusday', 'Friday', 'Saturday'
       ];
+
+      /* Get RGB from CSS color */
+    public static parseColor(input) {
+      const div = document.createElement('div');
+      div.style.color = input;
+      const m = getComputedStyle(div).color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i);
+      if (m) {
+        return {R: m[1], G: m[2], B: m[3]};
+      } else {
+        throw new Error('Color ' + input + ' could not be parsed.');
+      }
+    }
 
     /* Get today's date */
     public static getToday(): any {
@@ -68,6 +90,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     }
 
     ngOnInit() {
+      /* Parse colors*/
+      this.RGB_HM = XunkCalendarComponent.parseColor(this.heatMapColor);
+      this.RGB_Primary = XunkCalendarComponent.parseColor(this.primaryColor);
+      this.RGB_Primary_FG = XunkCalendarComponent.parseColor(this.primaryForeground);
+
       /* Display initial */
       this.displayCalendar();
     }
@@ -176,6 +203,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
     /** Gets the heat map color */
     public getHM(day): string {
+      /* If today */
+      if (this.isFab(day)) {
+        return `rgb(${this.RGB_Primary.R}, ${this.RGB_Primary.G}, ${this.RGB_Primary.B})`;
+      }
+
+      /* Return heatmap color */
       const zeropad = XunkCalendarComponent.zeropad;
       const ind = (zeropad(this.openPage.year, 4) + zeropad(this.openPage.month + 1, 2) + zeropad(day, 2));
       if (ind in this.heatmap) {
@@ -183,5 +216,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       } else {
         return 'inherit';
       }
+    }
+
+    public getForeground(day): string {
+      /* If today */
+      if (this.isFab(day)) {
+        return `rgb(${this.RGB_Primary_FG.R}, ${this.RGB_Primary_FG.G}, ${this.RGB_Primary_FG.B})`;
+      }
+      if (this.isToday(day)) {
+        return `rgb(${this.RGB_Primary.R}, ${this.RGB_Primary.G}, ${this.RGB_Primary.B})`;
+      }
+      return;
     }
 }

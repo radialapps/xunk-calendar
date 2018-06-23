@@ -34,27 +34,13 @@
   <!-- The real calendar -->
   <tr *ngFor="let row of calendar">
       <td class="xunk-calendar-cell" *ngFor="let col of row">
-          <ng-container *ngIf="col">
-
-              <ng-container *ngIf="isFab(col); else notFab">
-                  <button mat-mini-fab
-                          [color]="isFab(col)"
-                          (click)="selectDay(col)"
-                          style="box-shadow: none">
-                      {{col}}
-                  </button>
-              </ng-container>
-
-              <ng-template #notFab>
-                  <button mat-icon-button [color]="isToday(col)"
-                         [style.background-color]="getHM(col)"
-                         (click)="selectDay(col)">
-                    <ng-container *ngIf="isToday(col); else notToday"><b>{{col}}</b></ng-container>
-                    <ng-template #notToday>{{col}}</ng-template>
-                  </button>
-              </ng-template>
-
-          </ng-container>
+        <button mat-icon-button
+                *ngIf="col" class="xunk-calendar-day"
+                [style.backgroundColor]="getHM(col)"
+                [style.color]="getForeground(col)"
+                (click)="selectDay(col)">
+            <span [style.fontWeight]="isToday(col) ? 'bold' : null">{{col}}</span>
+        </button>
       </td>
   </tr>
 </table>

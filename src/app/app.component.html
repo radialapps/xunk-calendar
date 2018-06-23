@@ -7,7 +7,11 @@ If you want it in your project, head over to <a href="https://github.com/radiala
 <div class="calendar-container mat-elevation-z3">
     <xunk-calendar [selectedDate]="selDate"
                    [heatmap]="heatmap"
-                   (change)="dateChanged($event)"></xunk-calendar>
+                   (change)="dateChanged($event)"
+                   heatMapColor="#00ff00"
+                   primaryColor="#ff0000"
+                   primaryForeground="white">
+    </xunk-calendar>
 </div>
 
 <br>
