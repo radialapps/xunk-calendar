@@ -17,7 +17,7 @@ import { XunkCalendarComponent } from './xunk-calendar.component';
         MatButtonModule,
      ],
     exports: [
-        XunkCalendarComponent
+        XunkCalendarComponent,
     ]
 })
 export class XunkCalendarModule {
@@ -28,7 +28,7 @@ export class XunkCalendarModule {
     }
 
     /** Pad number with zeros */
-    public static zeroPad(num, padlen, padchar = '0'): string {
+    public static zeroPad(num: number, padlen: number, padchar = '0'): string {
         return XunkCalendarComponent.zeropad(num, padlen, padchar);
     }
 }

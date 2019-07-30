@@ -1,5 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+export interface XunkDate {
+  date: number;
+  month: any;
+  year: any;
+}
+
 @Component({
     selector: 'xunk-calendar',
     templateUrl: './xunk-calendar.component.html',
@@ -8,16 +14,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   export class XunkCalendarComponent implements OnInit {
 
     /** Today */
-    @Input() public today;
+    @Input() public today: XunkDate;
 
     /** The page open with [xx, month, year] */
-    @Input() public openPage;
+    @Input() public openPage: XunkDate;
 
     /** Currently selected date */
-    @Input() public selectedDate;
+    @Input() public selectedDate: XunkDate;
 
     /** Array with all the calendar data */
-    @Input() public calendar: any[] = [];
+    @Input() public calendar: any[][] = [[]];
 
     /** Color for heat map */
     @Input() public heatMapColor = '#00ff00';
@@ -28,10 +34,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     /** Color for primary foreground */
     @Input() public primaryForeground = 'white';
 
+    /** Heatmap data */
     @Input() public heatmap = {};
 
+    /** Set this to false to hide month changing header */
+    @Input() public showHeader = true;
+
     /** Emits the new date on change */
-    @Output() change: EventEmitter<any> = new EventEmitter();
+    @Output() change: EventEmitter<XunkDate> = new EventEmitter();
+
+    /** Emits the new month with date as 1 on change */
+    @Output() monthChange: EventEmitter<XunkDate> = new EventEmitter();
 
     private RGB_HM: any;
     private RGB_Primary: any;
@@ -50,7 +63,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         'Thrusday', 'Friday', 'Saturday'
       ];
 
-      /* Get RGB from CSS color */
+    /* Get RGB from CSS color */
     public static parseColor(input) {
       const div = document.createElement('div');
       div.style.color = input;
@@ -66,7 +79,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     }
 
     /* Get today's date */
-    public static getToday(): any {
+    public static getToday(): XunkDate {
       const dateNow = new Date();
       return {
         date: dateNow.getDate(),
@@ -106,14 +119,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
      * Returns true if two dates are the same
      * with the date taken separately
      */
-    public sameDate(date, a, b): boolean {
+    protected sameDate(date: number, a: XunkDate, b: XunkDate): boolean {
       return date === b.date &&
              a.month === b.month &&
              a.year === b.year;
     }
 
     /** Returns true if fab! */
-    public isFab(col: number): string {
+    protected isFab(col: number): string {
       /* Check if date is selected */
       if (this.sameDate(col, this.openPage, this.selectedDate)) {
         return 'primary';
@@ -124,7 +137,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     }
 
     /** Returns 'primary' if col is today */
-    isToday(col: number): string {
+    public isToday(col: number): string {
       if (this.sameDate(col, this.openPage, this.today)) {
         return 'primary';
       }
@@ -156,6 +169,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
       /* Refresh */
       this.displayCalendar();
+
+      /* Emit event */
+      this.monthChange.emit(this.openPage);
     }
 
     /** Compute the calendar */
@@ -188,7 +204,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     }
 
     /** Gets the DaysPerMonth array */
-    public getDaysOfMonth(month: number, year: number): number {
+    protected getDaysOfMonth(month: number, year: number): number {
       /* Check leap years if February */
       if (month === 1 && this.leapYear(year)) {
         return 29;
@@ -200,12 +216,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     }
 
     /** Returns true if leap year */
-    public leapYear(year): boolean {
+    protected leapYear(year: number): boolean {
       return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
     }
 
     /** Gets the heat map color */
-    public getHM(day): string {
+    public getHM(day: number): string {
       /* If today */
       if (this.isFab(day)) {
         return `rgb(${this.RGB_Primary.R}, ${this.RGB_Primary.G}, ${this.RGB_Primary.B})`;
@@ -221,7 +237,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       }
     }
 
-    public getForeground(day): string {
+    public getForeground(day: number): string {
       /* If today */
       if (this.isFab(day)) {
         return `rgb(${this.RGB_Primary_FG.R}, ${this.RGB_Primary_FG.G}, ${this.RGB_Primary_FG.B})`;

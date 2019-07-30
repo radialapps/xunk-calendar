@@ -8,16 +8,18 @@ If you want it in your project, head over to <a href="https://github.com/radiala
     <xunk-calendar [selectedDate]="selDate"
                    [heatmap]="heatmap"
                    (change)="dateChanged($event)"
-                   heatMapColor="#00ffff"
+                   (monthChange)="monthChanged($event)"
+                   heatMapColor="#ffff00"
                    primaryColor="#673ab7"
                    primaryForeground="white">
     </xunk-calendar>
 </div>
 
 <br>
-Selected Date is {{ selDate.year }}-{{ selDate.month + 1}}-{{ selDate.date }}
+Selected Date is {{ selDate.year }}-{{ selDate.month + 1}}-{{ selDate.date }}<br>
+Month is {{ month.month }}, year is {{ month.year }}
 <br><br>
 Getting this was as simple as
-<pre ngNonBindable>
+<p ngNonBindable>
 Selected Date is {{ selDate.year }}-{{ selDate.month + 1}}-{{ selDate.date }}
-</pre>
+</p>

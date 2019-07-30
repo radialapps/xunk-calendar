@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { XunkCalendarModule } from '../xunk-calendar/xunk-calendar.module';
+import { XunkDate } from '../xunk-calendar/xunk-calendar.component';
 
 @Component({
   selector: 'xunk-root',
@@ -13,8 +14,11 @@ export class AppComponent implements OnInit {
 
   public heatmap = {} as any;
 
+  public month: XunkDate;
+
   ngOnInit() {
       this.selDate = XunkCalendarModule.getToday();
+      this.month = this.selDate;
       this.heatmap = this.genDemoHeatmap();
   }
 
@@ -35,8 +39,13 @@ export class AppComponent implements OnInit {
   }
 
   /** Log changes in date */
-  dateChanged(data: any) {
+  dateChanged(data: XunkDate) {
     console.log(data);
+  }
+
+  /** Log changes to month */
+  monthChanged(data: XunkDate) {
+    this.month = data;
   }
 
 }
