@@ -1,7 +1,7 @@
 {
   "name": "xunk-calendar",
   "description": "Simple calendar component for Angular 8+ and Angular Material",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "repository": "https://github.com/radialapps/xunk-calendar",
   "author": "Varun Patil <radialapps@gmail.com>",
   "license": "MIT",
